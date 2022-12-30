@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %} {% block content %}
+
+<main class="contenedor employees-principal">
+  <div class="card" style="width: 29rem">
+    <img src="{{ object.avatar.url }}" alt="Avatar" />
+  </div>
+  <div class="informacion-employee">
+    <h2><strong>NOMBRE(S)</strong> : &nbsp; {{ object.name }}</h2>
+    <h3><strong>APELLIDO(S)</strong> : &nbsp; {{ object.lastname }}</h3>
+    <h3><strong>OCUPACION</strong> : &nbsp; {{ object.occupation }}</h3>
+    <h3><strong>DEPARTMANTO TI</strong> : &nbsp; {{ object.department }}</h3>
+    <h3><strong>AREA TRABAJO</strong> : &nbsp; {{ object.department.area }}</h3>
+    <a class="btn btn-light" href="{% url 'employee_list' %}">Back to List</a>
+  </div>
+</main>
+
+{% endblock %}

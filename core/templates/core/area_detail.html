@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %} {% block content %}
+
+<main class="contenedor employees-principal">
+  <div class="informacion-employee">
+    <h2><strong>NOMBRE</strong> : &nbsp; {{ object.name }}</h2>
+    <h3><strong>FECHA</strong> : &nbsp; {{ object.creation_date }}</h3>
+    <a class="btn btn-light" href="{% url 'area_list' %}">Volver a la lista</a>
+  </div>
+</main>
+
+{% endblock %}

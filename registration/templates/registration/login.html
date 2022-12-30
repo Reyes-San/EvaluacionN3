@@ -1,0 +1,31 @@
+
+{% extends 'core/base.html' %}
+{% block content %}
+<style>.errorlist{color:red;}</style>
+<h1 class="text-center">Iniciar sesion</h1>
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        {% if 'register' in request.GET %}
+        <p class="text-success m-2">New User</p>
+        {% endif %}
+        <form action="" method="post">{% csrf_token %}
+          {% if form.non_field_errors %}
+            <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+          {% endif %}
+          <p>
+            <input type="text" name="username" autofocus maxlength="254" required
+              id="id_username" class="form-control mb-4" placeholder="Username"/>
+          </p>
+          <p>
+            <input type="password" name="password" required
+              id="id_password" class="form-control mb-4" placeholder="Password"/>
+          </p>
+          <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<h1 class="text-center">Profile</h1>
+<main role="main">
+    <div class="container">
+        <div class="row mt-3 mb-5">
+            <div class="col-md-9 mx-auto d-flex">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="text-center m-2">
+                        <input type="submit" class="btn btn-primary" value="Update">
+                    </div>
+                </form>
+                <div class="m-4">
+                    <div class="card" style="width: 18rem;">
+                        {% if request.user.profile.avatar %}
+                        <img class="img-fluid" src="{{ request.user.profile.avatar.url }}" alt="">
+                        {% else %}
+                        {% load static %}
+                        <img class="img-fluid" src="{% static 'registration/profile.webp' %}" alt="">
+                        {% endif %}
+                        <div class="card-body">
+                            {% if request.user.profile.link %}
+                            <a href="{{ request.user.profile.fullname }}">Personal profile page</a>
+                            {% else %}
+                            <p>There's no page for this profile</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

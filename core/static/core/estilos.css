@@ -1,0 +1,123 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 100rem;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/**Main**/
+.contenedor-employees {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.employees {
+    flex: 0 0 calc(20% - 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1px;
+}
+
+.img-employees {
+    min-height: 20rem;
+}
+
+.contenido-employees {
+    padding: 0.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-employees h3,
+p {
+    text-align: center;
+    margin: 0;
+}
+
+.precio {
+    font-weight: 700;
+    text-align: center;
+    padding-top: 1rem;
+    flex-basis: 50%;
+    margin: 1rem 0;
+}
+
+/**
+Imagenes
+**/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.caja {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 300px;
+    overflow: hidden;
+}
+
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover) {
+    .box img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+/*
+Seccion detail vinilo
+*/
+
+.employees-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.caratula-libros {
+    flex-basis: 60%;
+    padding: 2rem 1rem;
+}
+
+.informacion-employee {
+    flex-basis: calc(40% - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+}
+
+.informacion-libros p {
+    margin: 1rem 0;
+}

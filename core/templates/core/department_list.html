@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %} {% block content %}
+
+<h2 class="text-center mt-4 mg-5">Departments</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Area-Trabajo</th>
+      <th scope="col" class="text-center">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in department_list %}
+    <tr>
+      <th>{{ b.name }}</th>
+      <td>{{ b.description }}</td>
+      <td>{{ b.area }}</td>
+      <td>
+        <div class="d-flex justify-content-center">
+          <a
+            class="btn btn-secondary m-2"
+            href="{% url 'department_detail' b.id %}"
+          >
+            <i class="bi bi-eye"></i>
+          </a>
+          {% if request.user.is_staff %}
+          <a
+            class="btn btn-warning m-2"
+            href="{% url 'department_edit' b.id %}"
+          >
+            <i class="bi bi-pencil-square"></i>
+          </a>
+          <a
+            class="btn btn-danger m-2"
+            href="{% url 'department_deleted' b.id %}"
+          >
+            <i class="bi bi-trash"></i>
+          </a>
+          {% endif %}
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
